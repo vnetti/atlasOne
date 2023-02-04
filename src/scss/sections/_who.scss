@@ -1,0 +1,102 @@
+.who {
+    position: relative;
+    padding: 423.5px 0 373.5px;
+    overflow: hidden;
+
+    @media (max-width: $breakpoint1450) {
+        padding: 300px 0 300px;
+    }
+
+    @media (max-width: $breakpoint1200) {
+        padding: 200px 0 200px;
+    }
+
+    @media (max-width: $breakpoint480) {
+        padding: 100px 0 200px;
+    }
+
+    @media (max-width: $breakpoint375) {
+        padding: 80px 0 120px;
+    }
+
+    &__title {
+        @media (max-width: $breakpoint480) {
+            text-align: center;
+        }
+    }
+
+    &__subtitle {
+        margin-top: 10px;
+        max-width: 540px;
+
+        @media (max-width: $breakpoint992) {
+            margin-top: 0;
+            max-width: 380px;
+        }
+
+        @media (max-width: $breakpoint480) {
+            max-width: none;
+            text-align: center;
+            background-color: rgba($color: $white, $alpha: .6);
+            box-shadow: 0px 4px 4px -5px rgba(34, 60, 80, 0.3);
+        }
+
+        @media (max-width: 300px) {
+            box-shadow: none;
+
+        }
+    }
+
+    // .who__bg
+    &__bg {
+        z-index: -1;
+        position: absolute;
+        top: -70px;
+        right: 0;
+
+        @media (max-width: $breakpoint1450) {
+            width: 800px;
+        }
+
+        @media (max-width: $breakpoint1200) {
+            width: 500px;
+            top: -20px;
+        }
+
+        @media (max-width: $breakpoint768) {
+            opacity: .7;
+        }
+        
+        @media (max-width: 700px) {
+            opacity: .3;
+        }
+
+        @media (max-width: 600px) {
+            opacity: .1;
+        }
+
+        @media (max-width: $breakpoint480) {
+            display: none;
+        }
+
+    }
+
+    // .who__bg
+    &__bg_mob {
+        display: none;
+
+        @media (max-width: $breakpoint480) {
+            display: block;
+            max-width: 100%;
+            position: absolute;
+            top: 160px;
+            z-index: -1;
+            opacity: .4;
+        }
+
+        @media (max-width: $breakpoint375) {
+            top: 110px;
+        }
+    }
+
+}

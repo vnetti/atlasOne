@@ -1,0 +1,344 @@
+.hero {
+    position: relative;
+    padding-top: 240px;
+    overflow: hidden;
+    // margin-bottom: -86px;
+    z-index: 1;
+
+    .container {
+        position: relative;
+    }
+
+    //.hero__bg
+    &__bg {
+        position: absolute;
+        width: 810px;
+        height: 750px;
+        right: -10px;
+        top: -190px;
+        background-image: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0.53) 5.77%, 
+                                        rgba(255, 255, 255, 0) 40.96%), url('@img/hero/hero_bg.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        @media (max-width: $breakpoint1450) {
+            width: 750px;
+            height: 700px;
+        }
+
+        @media (max-width: $breakpoint1200) {
+            width: 100%;
+            left: 0;
+            z-index: -1;
+        }
+    }
+    // .hero__contain
+    &__contain {
+        max-width: 440px;
+        margin-bottom: 250px;
+
+        @media (max-width: $breakpoint1450) {
+            margin-bottom: 230px;
+        }
+
+        @media (max-width: $breakpoint1200) {
+            background-color: $white;
+            padding: 20px;
+            max-width: 445px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 190px;
+        }
+
+        @media (max-width: $breakpoint480) {
+            margin-bottom: 170px;
+        }
+
+        @media (max-width: $breakpoint375) {
+            padding: 10px;
+            margin-bottom: 250px;
+        }
+
+        @media (max-width: 320px) {
+            margin-bottom: 275px;
+        }
+    }
+    // .hero__title
+    &__title {
+        color: $neutral;
+        font-weight: 700;
+        font-size: 19px;
+        line-height: 36px;
+        margin-bottom: 10px;
+
+        @media (max-width: $breakpoint1450) {
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        @media (max-width: $breakpoint480) {
+            font-size: 17px;
+        }
+
+        @media (max-width: $breakpoint375) {
+            text-align: center;
+            font-size: 13px;
+            line-height: 18px;
+        }
+    }
+
+    // .hero__subtitle
+    &__subtitle {
+        color: $primary;
+        font-weight: 600;
+        font-size: 48px;
+        line-height: 62px;
+        margin-bottom: 25px;
+
+        @media (max-width: $breakpoint1450) {
+            font-size: 42px;
+            margin-bottom: 20px;
+            line-height: 56px;
+        }
+
+        @media (max-width: $breakpoint1200) {
+            padding: 0 10px;
+            text-align: justify;
+        }
+
+        @media (max-width: $breakpoint480) {
+            font-size: 34px;
+            text-align: center;
+            line-height: 44px;
+        }
+        
+        @media (max-width: 459.98px) {
+            font-size: 32px;
+            text-align: center;
+            line-height: 44px;
+        }
+
+        @media (max-width: 390px) {
+            font-size: 30px;
+        }
+
+        @media (max-width: $breakpoint375) {
+            font-size: 28px;
+            line-height: 36px;
+        }
+
+        @media (max-width: 319.98px) {
+            font-size: 22px;
+            line-height: 28px;
+        }
+
+        @media (max-width: 257.98px) {
+            font-size: 20px;
+        }
+
+        span {
+            color: $secondary;
+            font-weight: 700;
+        }
+    }
+
+    // .hero__btns
+    &__btns {
+        display: flex;
+        gap: 20px;
+
+        @media (max-width: $breakpoint480) {
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .btn_primary {
+            width: 290px;
+
+            @media (max-width: $breakpoint1450) {
+                width: 250px;
+            }
+
+            @media (max-width: $breakpoint480) {
+                width: 300px;
+            }
+
+            @media (max-width: $breakpoint375) {
+                width: 170px;
+            }
+        }
+    }
+
+    // .hero__btn
+    &__btn {
+        padding: 15px 0;
+
+        @media (max-width: $breakpoint375) {
+            padding: 10px 0;
+        }
+    }
+    
+    .stats {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    
+        @media (max-width: $breakpoint1200) {
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+    
+        // .stats__list
+        &__list {
+            display: flex;
+            justify-content: center;
+            gap: 100px;
+    
+            @media (max-width: $breakpoint1450) {
+                gap: 80px;
+            }
+    
+            @media (max-width: $breakpoint992) {
+                gap: 100px;
+            }
+    
+            @media (max-width: $breakpoint768) {
+                gap: 80px;
+            }
+    
+            @media (max-width: $breakpoint480) {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    
+        // .stats__item
+        &__item {
+            text-align: center;
+            color: $primary;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            align-items: center;
+    
+            @media (max-width: $breakpoint480) {
+                gap: 0px;
+            }
+    
+            &:nth-child(2) {
+                position: relative;
+    
+                &::after,
+                &::before {
+                    content: '';
+                    position: absolute;
+                    display: block;
+                    background-color: $black;
+                    width: 50px;
+                    height: 2px;
+                    transform: rotate(90deg);
+                    bottom: 50%;
+    
+                    @media (max-width: $breakpoint992) {
+                        width: 65px;
+                    }
+    
+                    @media (max-width: $breakpoint768) {
+                        bottom: 45%;
+                        width: 50px;
+                    }
+    
+                    @media (max-width: $breakpoint480) {
+                        display: none;
+                    }
+                }
+                &::before {
+                    left: -75px;
+    
+                    @media (max-width: $breakpoint1450) {
+                        left: -65px;
+                    }
+    
+                    @media (max-width: $breakpoint992) {
+                        left: -80px;
+                    }
+    
+                    @media (max-width: $breakpoint768) {
+                        left: -60px;
+                    }
+                }
+    
+                &::after {
+                    right: -75px;
+    
+                    @media (max-width: $breakpoint1450) {
+                        right: -65px;
+                    }
+    
+                    @media (max-width: $breakpoint992) {
+                        right: -80px;
+                    }
+    
+                    @media (max-width: $breakpoint768) {
+                        right: -60px;
+                    }
+                }
+            }
+    
+            // .stats__item_amount
+            &_amount {
+                color: inherit;
+                font-weight: 600;
+                font-size: 36px;
+                line-height: 44px;
+    
+                @media (max-width: $breakpoint1450) {
+                    font-size: 34px;
+                }
+    
+                @media (max-width: $breakpoint1200) {
+                    font-size: 28px;
+                }
+    
+                @media (max-width: $breakpoint768) {
+                    font-size: 24px;
+                }
+    
+                @media (max-width: $breakpoint480) {
+                    line-height: 36px;
+                }
+            }
+    
+            // .stats__item_description
+            &_description {
+                color: inherit;
+                font-weight: 400;
+                font-size: 24px;
+                line-height: 29px;
+    
+                @media (max-width: $breakpoint1450) {
+                    font-size: 22px;
+                }
+    
+                @media (max-width: $breakpoint1200) {
+                    font-size: 18px;
+                }
+    
+                @media (max-width: $breakpoint992) {
+                    max-width: 130px;
+                    line-height: 20px;
+                }
+    
+                @media (max-width: $breakpoint768) {
+                    font-size: 15px;
+                }
+    
+                @media (max-width: $breakpoint480) {
+                    max-width: max-content;
+                }
+            }
+        }
+    }    
+}

@@ -1,0 +1,16 @@
+// Global SCSS-files imports
+@import 'vars';
+@import 'fonts';
+@import 'global';
+
+// Sectionts or Pages SCSS-files imports
+@import 'sections/header';
+@import 'sections/hero';
+@import 'sections/offers';
+@import 'sections/our-vision';
+@import 'sections/who';
+@import 'sections/what';
+@import 'sections/why';
+
+
+// @import 'sections/footer';

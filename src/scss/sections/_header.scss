@@ -1,0 +1,548 @@
+
+.header {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 2;
+}
+
+.nav {
+	display: flex;
+	align-items: center;
+
+	// Чуть шире чем контейнер
+	margin: 0 -15px;
+	width: calc(100% + 30px);
+
+	@media (max-width: $breakpoint768) {
+		margin: 0;
+		width: 100%;
+	}
+}
+
+.menu {
+	display: flex;
+	align-items: center;
+	column-gap: 60px;
+	max-width: 100%;
+	margin-right: auto;
+
+	@media (max-width: $breakpoint1450) {
+		column-gap: 40px;
+	}
+
+	@media (max-width: $breakpoint1200) {
+		column-gap: 30px;
+	}
+
+	// .menu__item
+
+	&__item {
+		position: relative;
+		display: block;
+
+		// .menu__item_with-submenu
+
+		&_with-submenu {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			cursor: pointer;
+
+			span {
+				display: block;
+
+				&:last-child {
+					width: 24px;
+					height: 24px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+
+					svg {
+						transition: transform .3s linear;
+
+						path {
+							transition: fill .3s linear;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				span:last-child svg path {
+					fill: $secondary
+				}
+			}
+
+			&.submenu_active {
+
+				span {
+
+					&:first-child {
+						color: $secondary;
+					}
+					
+					&:last-child svg {
+						transform: rotate(180deg);
+
+						path {
+							fill: $secondary;
+						}
+					}
+				}
+				
+			}
+		}
+	}
+
+	// .menu__item-link
+
+	&__item-link {
+		color: $primaryDark;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 20px;
+		text-transform: uppercase;
+		transition: color .3s linear;
+
+		@media (max-width: $breakpoint1450) {
+			font-size: 15px;
+		}
+
+		@media (max-width: $breakpoint1200) {
+			font-size: 13px;
+		}
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	// .menu__logo-link
+
+	&__logo-link {
+		display: inline-block;
+		margin-right: 50px;
+
+		@media (max-width: $breakpoint1450) {
+			margin-right: 30px;
+		}
+
+		@media (max-width: $breakpoint992) {
+			margin-right: auto;
+		}
+	}
+
+	// .menu__logo
+
+	&__logo {
+		display: inline-block;
+
+		@media (max-width: $breakpoint1450) {
+			max-width: 250px;
+		}
+
+		@media (max-width: $breakpoint1200) {
+			max-width: 220px;
+		}
+
+		@media (max-width: $breakpoint992) {
+			max-width: max-content;
+		}
+
+		@media (max-width: $breakpoint480) {
+			max-width: 220px;
+		}
+
+		@media (max-width: $breakpoint375) {
+			max-width: 170px;
+		}
+	}
+
+	// .nmenu__btns
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		gap: 15px;
+
+		@media (max-width: $breakpoint1200) {
+			gap: 5px;
+		}
+	}
+
+	// .nmenu__btn
+
+	&__btn {
+		padding: 15px 30px;
+
+		&:first-child {
+			padding: 19px 15px;
+		}
+	}
+	
+}
+
+
+.submenu {
+	position: absolute;
+	top: 0;
+	visibility: hidden;
+	opacity: 0;
+	transition: .3s ease;
+	width: 100%;
+
+	&.submenu_active {
+		visibility: visible;
+		opacity: 1;
+		top: calc(100% + 5px);
+
+		.submenu__item {
+			pointer-events: auto;
+		}
+	}
+
+	// .submenu__item
+
+	&__item {
+		pointer-events: none;
+		position: absolute;
+		width: 100%;
+		transform: translateY(0%);
+		transition: .3s ease;
+	}
+
+	// .submenu__item-link
+
+	&__item-link {
+		position: relative;
+		display: block;
+		padding: 12px 20px;
+		font-weight: 500;
+		font-size: 12px;
+		color: $white;
+		background-color: $primary;
+		overflow: hidden;
+
+		/* Стили эффекта при наведении у ссылок сабменю*/
+
+		.hover {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			z-index: 2;
+			background-color: $secondary;
+			will-change: transform;
+			overflow: hidden;
+		}
+
+		.hover__text {
+			color: $white;
+			padding: 12px 25px;
+			display: block;
+			will-change: transform;
+		}
+	}
+}
+
+// .submenu при Touch у html
+
+.Touch {
+
+	.submenu__item-link {
+
+		&::after {
+			content: '';
+			height: 1px;
+			background-color: $white;
+			position: absolute;
+			bottom: 0px;
+			left: 10px;
+			right: 10px;
+			display: none;
+		}
+
+		&:active {
+			color: $secondary;
+			background-color: $primaryDark;
+
+			@media (max-width: $breakpoint992) {
+				background-color: transparent;
+			}
+		}
+	}
+
+	.submenu__item:last-child .submenu__item-link::after {
+		display: none;
+	}
+
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Burger menu styles
+
+@media screen and (max-width: $burgerBreakpoint) {
+
+	.header {
+		height: 100vh;
+		pointer-events: none;
+	}
+
+	.nav {
+		pointer-events: all;
+	}
+
+	// .menu
+
+	.menu {
+		position: absolute;
+		top: 0;
+		left: 0;
+		overflow: hidden;
+
+		width: 100vw;
+		height: 0;
+
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+
+		pointer-events: all;
+
+		background-color: $primary;
+		transition: height .3s linear;
+
+		row-gap: 15px; // 5px
+
+
+		&__item {
+			pointer-events: none;
+		}
+
+		&__item-link {
+			font-size: 15px; // none
+			pointer-events: all;
+		}
+
+		// .menu__item_with-submenu
+
+		&__item_with-submenu {
+
+			span {
+				&:last-child {
+					position: absolute;
+					right: -22px;
+				}
+			}
+			svg path {
+				fill: $white;
+			}
+		}
+
+		&.active {
+			height: 100vh;
+		}
+
+		// .menu__btns
+
+		&__btns {
+			position: absolute;
+			bottom: 100%;
+			left: 100px;
+			right: 100px;
+			
+			column-gap: 20px;
+			height: 0;
+			overflow: hidden;
+
+			transition: bottom .3s linear, height .3s linear;
+
+
+			@media (max-width: $breakpoint768) {
+				left: 10px;
+				right: 10px;
+			}
+
+			@media (max-width: $breakpoint375) {
+				flex-direction: column;
+				row-gap: 10px;
+			}
+
+			.menu__btn {
+				flex: 0 0 calc(50% - 10px);
+				background-color: rgba($color: $secondary, $alpha: .9);
+				padding-top: 15px;
+				padding-bottom: 15px;
+				color: $white;
+				font-size: 15px; // none
+
+				@media (max-width: $breakpoint375) {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					padding: 0;
+					width: 90%;
+					flex-basis: calc(50% - 5px);
+				}
+			}
+
+			&.menu__btns_active {
+				height: 60px;
+				top: auto;
+				bottom: 10px;
+				pointer-events: all;
+
+				@media (max-width: $breakpoint375) {
+					height: 90px;
+				}
+			}
+		}
+	}
+	
+	// .burger 
+	.burger {
+		display: block;
+		position: relative;
+		height: 20px;
+		width: 30px;
+		z-index: 3;
+		cursor: pointer;
+
+		@media (max-width: $breakpoint375) {
+			width: 20px;
+			height: 14px;
+		}
+
+		&.active-burger {
+			&::before {
+				background: $burgerActiveColor;
+				transform: rotate(45deg);
+				transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+				top: 8px;
+
+				@media (max-width: $breakpoint375) {
+					top: 5px;
+				}
+			}
+
+			&::after {
+				background: $burgerActiveColor;
+				transform: rotate(-45deg);
+				transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+				bottom: 10px;
+
+				@media (max-width: $breakpoint375) {
+					bottom: 7px;
+				}
+			}
+
+			& span {
+				transform: scale(0);
+			}
+		}
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			height: 2px;
+			width: 100%;
+			background: $burgerColor;
+			transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+		}
+
+		&::before{
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			position: absolute;
+			top: 9px;
+			right: 0;
+			width: 100%;
+			background: $burgerColor;
+			height: 2px;
+			transform: scale(1);
+			transition: all .3s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+
+			@media (max-width: $breakpoint375) {
+				top: 6px;
+			}
+		}
+
+		&:hover {
+			&::before,
+			&::after,
+			span {
+				background: $secondary;
+			}
+		}
+	}
+
+	// .submenu
+
+	.submenu {
+		display: flex;
+		flex-direction: column;
+
+		position: relative;
+
+		height: 0px;
+		visibility: visible;
+		opacity: 1;
+		overflow: hidden;
+
+		transition: .3s linear;
+
+		&.submenu_active {
+			height: 105px;
+			top: 5px;
+		}
+		
+		// .submenu__item
+
+		&__item {
+			position: relative;
+			height: 100%;
+		}
+
+		// .submenu__item-link
+
+		&__item-link {
+			text-align: center;
+			padding: 0;
+			height: 100%;
+			font-size: 13px; // none
+
+		}
+	}
+
+	// .menu__link
+	.menu__item-link {
+		color: $white;
+	}
+}
+
+

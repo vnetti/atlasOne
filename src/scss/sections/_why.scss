@@ -1,0 +1,62 @@
+.why {
+    padding: 190px 0 230px;
+    background: url('@img/why/why__bg.png') right no-repeat;
+
+    @media (max-width: $breakpoint480) {
+        padding: 150px 0 150px;
+    }
+
+    // .why__inner
+    &__inner {
+        padding: 10px;
+        margin-left: -10px;
+        max-width: 625px;
+        background-color: rgba($color: $white, $alpha: .8);
+
+        @media (max-width: $breakpoint480) {
+            margin-left: 0;
+            background-color: rgba($color: $white, $alpha: 1);
+        }
+    }
+
+    // .why__text
+    &__text {
+        margin-top: 15px;
+        margin-bottom: 15px;
+
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 137.5%; /* 22/16 */
+        letter-spacing: 0.3px;
+
+        @media (max-width: $breakpoint480) {
+            text-align: center;
+
+            margin-top: 5px;
+        }
+    }
+
+    // .why__btn
+    &__btn {
+        padding: 15px 30px;
+
+        @media (max-width: $breakpoint480) {
+            display: block;
+            max-width: max-content;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: $breakpoint375) {
+            font-size: 16px;
+        }
+    }
+
+    
+    .section-title {
+
+        @media (max-width:  $breakpoint480) {
+            text-align: center;
+        }
+    }
+}

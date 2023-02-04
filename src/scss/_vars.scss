@@ -1,0 +1,28 @@
+// colors
+$neutral: #08699E;
+$neutralLight: #D6EFFD;
+$primary: #03283C;
+$primaryDark: #010D14;
+$secondary: #FF6200;
+$white: #FFFFFF;
+$black: #000000;
+
+// Container
+$containerWidth: 1390px;
+
+// breakpoints
+$breakpoint1450: 1449.98px;
+$breakpoint1300: 1299.98px;
+$breakpoint1200: 1199.98px;
+$breakpoint992: 991.98px;
+$breakpoint768: 767.98px;
+$breakpoint480: 479.98px;
+$breakpoint375: 374.98px;
+
+// Burger menu
+$burgerBreakpoint: $breakpoint992;
+$burgerColor: $primaryDark;
+$burgerActiveColor: $secondary;
+
+// Fonts
+$fontMain: 'Montserrat', sans-serif;

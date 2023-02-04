@@ -1,0 +1,143 @@
+body {
+	font-family: $fontMain;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+}
+
+.container {
+	max-width: $containerWidth;
+	padding-left: 50px;
+	padding-right: 50px;
+	margin: 0 auto;
+
+	@media (max-width: $breakpoint768) {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	@media (max-width: $breakpoint375) {
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+}
+
+// .btn
+.btn {
+	display: inline-block;
+	font-weight: 700;
+	font-size: 18px;
+	line-height: 22px;
+	text-align: center;
+	text-transform: uppercase;
+	transition: .3s linear;
+
+	@media (max-width: $breakpoint1450) {
+		font-size: 17px;
+	}
+
+	@media (max-width: $breakpoint1200) {
+		font-size: 14px;
+	}
+
+	@media (max-width: $breakpoint375) {
+		font-size: 13px;
+	}
+
+	// .btn_primary
+	&_primary {
+		background-color: $primary;
+		color: $white;
+
+		&:hover {
+			background-color: $primaryDark;
+			color: $secondary;
+		}
+
+		&:active {
+			background-color: $neutralLight;
+		}
+	}
+
+	// .btn_outline
+	&_outline {
+		color: $primary;
+
+		&:hover {
+			color: $secondary;
+		}
+	}
+
+	&_secondary {
+		background-color: $secondary;
+		color: $white;
+
+		&:hover {
+			opacity: .8;
+			color: $primary;
+		}
+	}
+}
+
+// .section-title/subtitle
+.section-title {
+	font-weight: 700;
+	font-size: 48px;
+	line-height: 59px;
+	text-transform: capitalize;
+
+	@media (max-width: $breakpoint1450) {
+		font-size: 42px;
+	}
+
+	@media (max-width: $breakpoint768) {
+		line-height: 1.1;
+	}
+	@media (max-width: $breakpoint480) {
+		font-size: 34px;
+		line-height: 44px;
+	}
+
+	@media (max-width: $breakpoint375) {
+		font-size: 28px;
+		line-height: 36px;
+	}
+}
+
+.section-subtitle {
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 22px;
+	letter-spacing: 0.3px;
+
+	margin-top: 15px;
+
+	@media (max-width: $breakpoint992) {
+		margin-top: 5px;
+	}
+
+	@media (max-width: $breakpoint480) {
+		margin-top: 0;
+		font-size: 15px;
+	}
+	
+	@media (max-width: $breakpoint375) {
+		font-size: 14px;
+		margin-top: 5px;
+
+	}
+}
+
+.section-title_center {
+	text-align: center;
+}
+
+.section-title_primary {
+	color: $primary;
+}
+
+.section-title_white {
+	color: $white;
+}
+
+
