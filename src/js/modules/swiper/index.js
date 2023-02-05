@@ -1,4 +1,4 @@
-// Слайдер
+// Слайдер офферов
 export const offersSwiper = () => {
     window.addEventListener('DOMContentLoaded', () => {
 
@@ -99,3 +99,38 @@ export const offersSwiper = () => {
         });
     });
 };
+
+
+// Слайдер team
+export const teamSwiper = () => {
+    window.addEventListener('DOMContentLoaded', () => {
+        let teamSlider = new Swiper('.team__swiper', {
+            loop: true,
+            slideToClickedSlide: true,
+            slidesPerView: 1,
+            centeredSlides: true,
+            navigation: {
+                nextEl: ".team__swiper-button-next",
+                prevEl: ".team__swiper-button-prev",
+            },
+            breakpoints: {
+                992: {
+                    slidesPerView: 3,
+                    spaceBetween: 60,
+                },
+                600: {
+                    slidesPerView: 2,
+                    centeredSlides: false,
+                    spaceBetween: 30,
+                },
+                375: {
+                    slidesPerView: 1,
+                    centeredSlides: true,
+                    spaceBetween: 0,
+                }
+
+            }
+        })
+
+    })
+}

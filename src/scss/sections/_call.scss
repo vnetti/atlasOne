@@ -1,0 +1,23 @@
+.call {
+    padding-bottom: 40px;
+    text-align: center;
+
+    // call__btn
+    &__btn {
+        margin-top: 50px;
+        padding: 15px 0;
+        width: 450px;
+
+        @media (max-width: $breakpoint1200) {
+            width: 380px;
+        }
+
+        @media (max-width: $breakpoint480) {
+            width: 300px;
+        }
+
+        @media (max-width: $breakpoint375) {
+            width: 180px;
+        }
+    }
+}

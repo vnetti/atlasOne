@@ -23,12 +23,26 @@
       letter-spacing: normal;
     }
   }
+
+  &-slide {
+    margin-top: 50px;
+    max-width: 100%;
+
+    @media (max-width: $breakpoint375) {
+      margin-top: 30px;
+    }
+  }
 }
 
 .offer-wrapper {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+
+  @media (min-width: 991.98px) {
+    display: grid;
+    transform: none !important;
+  }
 
   @media (max-width: $breakpoint1200) {
     grid-template-columns: repeat(2, 1fr);
@@ -39,6 +53,7 @@
     display: flex;
     margin: 0;
     gap: 0;
+    
   }
 }
 
@@ -264,23 +279,6 @@
 }
 
 .swiper {
-  // .swiper-wrapper
-  &-wrapper {
-    @media (min-width: 991.98px) {
-      display: grid;
-      transform: none !important;
-    }
-  }
-
-  // .swiper-slide
-  &-slide {
-    margin-top: 50px;
-    max-width: 100%;
-
-    @media (max-width: $breakpoint375) {
-      margin-top: 30px;
-    }
-  }
 
   // .swiper-pagination
   &-pagination {

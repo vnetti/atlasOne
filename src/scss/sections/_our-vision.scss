@@ -1,11 +1,6 @@
 .our-vision {
-    padding: 80px 0px;
     background-color: $primary;
-
-    @media (max-width: $breakpoint480) {
-        padding: 50px 0;
-    }
-
+    
     // .our-vision__text
     &__text {
         margin-top: 8px;
