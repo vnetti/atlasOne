@@ -5,6 +5,7 @@
 
 // Sectionts or Pages SCSS-files imports
 @import 'sections/header';
+
 @import 'sections/hero';
 @import 'sections/offers';
 @import 'sections/our-vision';
@@ -14,6 +15,6 @@
 @import 'sections/benefits';
 @import 'sections/call';
 @import 'sections/team';
+@import 'sections/subscribe';
 
-
-// @import 'sections/footer';
+@import 'sections/footer';

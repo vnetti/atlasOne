@@ -20,6 +20,17 @@ body {
 		padding-left: 15px;
 		padding-right: 15px;
 	}
+
+	&_full {
+		// Чуть шире чем контейнер
+		margin: 0 -15px;
+		width: calc(100% + 30px);
+	
+		@media (max-width: $breakpoint768) {
+			margin: 0;
+			width: 100%;
+		}
+	}
 }
 
 // .btn
@@ -31,6 +42,7 @@ body {
 	text-align: center;
 	text-transform: uppercase;
 	transition: .3s linear;
+	cursor: pointer;
 
 	@media (max-width: $breakpoint1450) {
 		font-size: 17px;
@@ -68,13 +80,14 @@ body {
 		}
 	}
 
+	// .btn_secondary
 	&_secondary {
 		background-color: $secondary;
 		color: $white;
 
 		&:hover {
-			opacity: .8;
-			color: $primary;
+			background-color: rgba($color: $secondary, $alpha: .8);
+			color: $neutral;
 		}
 	}
 }

@@ -1,5 +1,3 @@
-"use strict"
-
 const linkWithSubmenu = document.querySelector('.menu__item_with-submenu');
 
 // [data-line-effect]

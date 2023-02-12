@@ -5,7 +5,6 @@ import { burgerMenu } from "./modules/burger-menu/index.js";
 import { submenu } from "./modules/submenu/index.js";
 import { offersSwiper, teamSwiper } from "./modules/swiper/index.js";
 
-
 // Проверка поддержки webp у браузера
 flsFunctions.isWebp();
 

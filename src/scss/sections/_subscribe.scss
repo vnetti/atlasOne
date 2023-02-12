@@ -1,0 +1,145 @@
+.subscribe {
+    padding: 204px 0;
+    background-image: url('@img/subscribe/subscribe__bg.jpg');
+    background-size: cover;
+    background-position: center;
+
+    // .subscribe__inner
+    &__inner {
+        margin: 0 auto;
+    }
+}
+
+.form {
+    max-width: 730px;
+
+    // .form__title
+    &__title {
+        font-weight: 700;
+        font-size: 32px;
+        line-height: 175%; /* 56/32 */
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: $white;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+        @media (max-width: $breakpoint768) {
+            font-size: 28px;
+        }
+
+        @media (max-width: $breakpoint480) {
+            font-size: 22px;
+        }
+    }
+
+    // .form__subtitle
+    &__subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 137.5%; /* 22/16 */
+        text-align: center;
+        letter-spacing: 0.3px;
+        color: $white;
+        margin-bottom: 55px;
+
+        @media (max-width: $breakpoint768) {
+            font-size: 14px;
+        }
+
+        @media (max-width: $breakpoint480) {
+            font-size: 12px;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: $breakpoint375) {
+            max-width: 280px;
+            margin: 0 auto;
+        }
+    }
+
+    // .form__input
+    &__input{
+        display: flex;
+        align-items: center;
+        max-width: 636px;
+        margin:0 auto;
+        margin-bottom: 40px;
+        gap: 16px;
+
+        @media (max-width: $breakpoint480) {
+            flex-direction: column;
+            gap: 5px;
+
+            margin-bottom: 20px;
+        }
+    }
+
+    // .form__input-email
+    &__input-email {
+        position: relative;
+        flex-basis: 450px;
+
+        @media (max-width: $breakpoint480) {
+            flex-basis: auto;
+            width: calc(100% - 30px);
+        }
+    
+        input {
+            padding: 13px 20px;
+            border: 1px solid $grays40;
+            transition: border-color .3s linear,  border-radius .3s linear;
+            width: 100%;
+            background-color: $white;
+            border-radius: 0;
+
+            color: $primary;
+            outline: none;
+
+            &:focus {
+                border-color: $secondary;
+                border-radius: 3px;
+            }
+
+            &::placeholder {
+                color: $grays60;
+            }
+        }
+
+    }
+
+    // .form__input-submit
+    &__input-submit {
+
+        @media (max-width: $breakpoint480) {
+            width: calc(100% - 30px);
+        }
+        
+        input {
+            border: none;
+            padding: 15px 30px;
+            border-radius: 0;
+
+            @media (max-width: $breakpoint480) {
+                width: 100%;
+            }
+        }
+    }
+
+    // .form__text
+    &__text {
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 133.333333%; /* 16/12 */
+        text-align: center;
+        letter-spacing: 0.2px;
+        color: $white;
+
+        max-width: 445px;
+        margin: 0 auto;
+
+        @media (max-width: $breakpoint480) {
+            font-size: 9px;
+            width: calc(100% - 30px);
+        }
+    }
+}
